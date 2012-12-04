@@ -5,4 +5,4 @@
 
 **Run** install.bat
 
-**Modify** SgidConnectionTimes.py lines `11` and `12` to be specific for your _location_ and _connection speed_
+**Modify** SgidConnectionTimes.py lines `14` and `15` to be specific for your _location_ and _connection speed_
