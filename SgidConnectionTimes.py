@@ -30,7 +30,6 @@ class SdeTimer:
 		version = str(version)
 		self.server = 'SGID' + version
 		self.connectionString = r'agrc@SGID{0}@gdb{0}.agrc.utah.gov.sde'.format(version)
-		arcpy.env.workspace = self.connectionString
 		self.layer = os.path.join(self.connectionString, "{0}.Transportation.Roads".format(self.server))
 
 	def TimeToListRows(self):
@@ -71,6 +70,7 @@ class SdeTimer:
 		print "Timing the list of SDE layers..."
 		starttime = datetime.now()
 
+		arcpy.env.workspace = self.connectionString
 		f = arcpy.ListFiles()
 
 		endtime = datetime.now()
