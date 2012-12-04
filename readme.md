@@ -1,5 +1,4 @@
 # AGRC SGID SDE Connection/Usability Timer #
-## Trouble shooter ##
 
 **Must** have python 2.5 or higher and arcpy 10.
 
