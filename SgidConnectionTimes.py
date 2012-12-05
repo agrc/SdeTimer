@@ -11,14 +11,14 @@ import gdata.spreadsheet.service
 from datetime import datetime, timedelta
 
 class SdeTimer:
-	testLocation = 'AGRCdesktop'
+	testLocation = 'AGRC Office'
 	testDownloadMbps = '100 Mb'
 	server = ''
 	connectionString = ''
 	values = {}
 	layer = ''
 
-	def __init__(self,version):	
+	def __init__(self,version):
 		self._setupSdeVersion(version)
 		self.values['date'] = time.strftime('%m/%d/%Y %H:%M:%S')
 
@@ -30,17 +30,16 @@ class SdeTimer:
 		version = str(version)
 		self.server = 'SGID' + version
 		self.connectionString = r'agrc@SGID{0}@gdb{0}.agrc.utah.gov.sde'.format(version)
-
- 		self.layer = os.path.join(self.connectionString, "{0}.Transportation.Roads".format(self.server))
+		self.layer = os.path.join(self.connectionString, "{0}.Transportation.Roads".format(self.server))
 
 	def TimeToListRows(self):
 		print "Timing feature querying."
 
 		count = 0
-		
+
 		sc = None
-		sc = arcpy.da.SearchCursor(self.layer,"ObjectID")
-				
+		sc = arcpy.SearchCursor(self.layer,"")
+
 		starttime = datetime.now()
 
 		try:
@@ -71,15 +70,16 @@ class SdeTimer:
 		print "Timing the list of SDE layers..."
 		starttime = datetime.now()
 
+		arcpy.env.workspace = self.connectionString
 		f = arcpy.ListFiles()
-		
+
 		endtime = datetime.now()
-		
+
 		self.values['timegetcatalog'] = str(self.ToMilliseconds(starttime, endtime))
 
 		print "Done. {0} {1}".format(self.values['timegetcatalog'],'milliseconds.')
 
-	def ToMilliseconds(self, start, stop): 
+	def ToMilliseconds(self, start, stop):
 		offset = stop - start
 		return (offset.days * 24 * 60 * 60 + offset.seconds) * 1000 + offset.microseconds / 1000.0
 
@@ -88,7 +88,7 @@ class SdeTimer:
 
 		email = 'agrctest@gmail.com'
 		password = '@grctest'
-		
+
 		spreadsheet_key = '0Al_OtOSAbDs7dFRMZzBpMWpfZExlZnhoTHRDbmktcnc'
 		worksheet_id = 'od6'
 
