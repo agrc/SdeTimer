@@ -10,7 +10,7 @@ import arcpy
 import gdata.spreadsheet.service
 from datetime import datetime, timedelta
 
-class SdeTimer:
+class SdeTimer(object):
 	testLocation = 'AGRC Office'
 	testDownloadMbps = '100 Mb'
 	server = ''
