@@ -17,9 +17,9 @@ Here's how to do it.
 
 4. In the extracted `SdeTimer-master` folder, **right click** on `SgidConnectionTimes.py` and open it in a text editor or a python editor. **Modify** lines `14` and `15` to be specific for your _location_ and _connection speed_
 
-     - **Find** testLocation = `'AGRC Office'` and change the value in single quotes to a description of your location (ex. `DEQ HSandbeck desktop`)
-     - **Find** testDownloadMbps = `'100 Mb'` and change the value to your download speed (ex. '18 Mb')
-     - **Save** your file and **exit**.
+- **Find** testLocation = `'AGRC Office'` and change the value in single quotes to a description of your location (ex. `DEQ HSandbeck desktop`)
+- **Find** testDownloadMbps = `'100 Mb'` and change the value to your speed (ex. '18 Mb')
+- **Save** your file and **exit**.
 
 5. In the extracted SdeTimer-master folder, **double click** the `install.bat` file to **install** the Google Drive python library needed to write results to our google spreadsheet that contains the results.
 
