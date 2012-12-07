@@ -87,7 +87,7 @@ class SdeTimer(object):
 		print "Sending speed data to google spreadsheet."
 
 		email = 'agrctest@gmail.com'
-		password = '@grctest'
+		password = 'PASSWORD HERE'
 
 		spreadsheet_key = '0Al_OtOSAbDs7dFRMZzBpMWpfZExlZnhoTHRDbmktcnc'
 		worksheet_id = 'od6'
